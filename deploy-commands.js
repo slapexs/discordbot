@@ -7,6 +7,10 @@ const commands = [
   new SlashCommandBuilder()
     .setName("sayhi")
     .setDescription("Say hi with me free WiFi"),
+
+  new SlashCommandBuilder()
+    .setName("serverinfo")
+    .setDescription("Display server info"),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "9" }).setToken(token);

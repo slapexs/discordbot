@@ -14,12 +14,10 @@ client.on("interactionCreate", async (interaction) => {
 
   const { commandName } = interaction;
 
-  switch (commandName) {
-    case "sayhi":
-      await interaction.reply("What up!");
-      break;
-
-    default:
-      break;
+  if (commandName === "sayhi") {
+    await interaction.reply("What up!");
+  } else if (commandName === "serverinfo") {
+    await interaction.reply(`ชื่อเซิร์ฟเวอร์ : ${interaction.guild.name}
+    สมาชิกทั้งหมด: ${interaction.guild.memberCount}`);
   }
 });
