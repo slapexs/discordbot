@@ -7,10 +7,12 @@ const commands = [
   new SlashCommandBuilder()
     .setName("sayhi")
     .setDescription("Say hi with me free WiFi"),
-
   new SlashCommandBuilder()
     .setName("serverinfo")
     .setDescription("Display server info"),
+  new SlashCommandBuilder()
+    .setName("commands")
+    .setDescription("Show all commands!"),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "9" }).setToken(token);
@@ -21,5 +23,6 @@ rest
   })
   .then(() => {
     console.log("Deploy command successful!");
+    // console.log(commands);
   })
   .catch(console.error);
